@@ -4,7 +4,7 @@ module JsonApiClient
       def call(environment)
         environment[:request_headers]["Accept"] = "application/json,*/*"
         uri = environment[:url]
-        uri.path = uri.path + ".json" unless uri.path.match(/\.json$/) 
+        uri.path = uri.path
         @app.call(environment)
       end
     end
